@@ -136,7 +136,7 @@ void DisplaySolution(
     // careful: if later code in this
     // function changes something, this
     // return is the wrong thing to do
-
+    SizeT num_node_cache = num_nodes;
     if (num_nodes > 40) { num_nodes = 40; }
 
     printf("\nFirst %lld labels of the GPU result:\n",
@@ -156,6 +156,15 @@ void DisplaySolution(
         printf(" ");
     }
     printf("]\n");
+
+    printf("RESULT_DATA: [")
+    for (VertexId i = 0; i < num_node_cache; ++i){
+        if(i!=0){
+            printf(",");
+        }
+        PrintValue(labels[i]);
+    }
+    printf("]\n")
 }
 
 /******************************************************************************
