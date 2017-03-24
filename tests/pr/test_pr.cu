@@ -146,6 +146,15 @@ void DisplaySolution(VertexId *node, Value *rank, SizeT nodes)
     {
         printf("Vertex ID: %lld, PageRank: %.8le\n", (long long)node[i], (double)rank[i]);
     }
+
+    printf("RESULT_DATA: [")
+    for (VertexId i = 0; i < nodes; ++i){
+        if(i!=0){
+            printf(",");
+        }
+        PrintValue(rank[i]);
+    }
+    printf("]\n")
 }
 
 /**
