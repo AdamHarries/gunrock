@@ -126,6 +126,7 @@ void Usage()
 template<typename VertexId, typename SizeT>
 void DisplaySolution (VertexId *source_path, SizeT num_nodes)
 {
+    SizeT nn_cache = num_nodes;
     if (num_nodes > 40) num_nodes = 40;
 
     printf("[");
@@ -135,6 +136,14 @@ void DisplaySolution (VertexId *source_path, SizeT num_nodes)
         printf(":");
         PrintValue(source_path[i]);
         printf(" ");
+    }
+    printf("]\n");
+
+    printf("All Results: [");
+    for (VertexId i = 0; i < nn_cache; ++i)
+    {
+        if(i != 0){ printf(","); }
+        PrintValue(source_path[i]);
     }
     printf("]\n");
 }
