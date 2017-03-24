@@ -157,14 +157,14 @@ void DisplaySolution(
     }
     printf("]\n");
 
-    printf("RESULT_DATA: [")
+    printf("RESULT_DATA: [");
     for (VertexId i = 0; i < num_node_cache; ++i){
         if(i!=0){
             printf(",");
         }
         PrintValue(labels[i]);
     }
-    printf("]\n")
+    printf("]\n");
 }
 
 /******************************************************************************
